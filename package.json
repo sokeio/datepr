@@ -1,0 +1,82 @@
+{
+  "name": "datepr",
+  "version": "4.6.14",
+  "description": "A lightweight, powerful javascript datetime picker",
+  "scripts": {
+    "build": "run-s build:pre build:build build:esm build:types build:post",
+    "build:pre": "rimraf dist",
+    "build:build": "ts-node --transpile-only build.ts",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:types": "tsc -p tsconfig.declarations.json",
+    "build:post": "cp src/typings.d.ts dist/typings.d.ts",
+    "fmt": "prettier --ignore-path .gitignore --trailing-comma es5 --write \"**/*.ts\"",
+    "fmt:check": "prettier --ignore-path .gitignore --trailing-comma es5 --check \"**/*.ts\"",
+    "start": "npm run build:build -- --dev",
+    "test": "run-s test:typecheck test:unit",
+    "test:typecheck": "tsc --noEmit --incremental",
+    "test:unit": "jest --config config/jest.json",
+    "coveralls": "npm run test:unit -- --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+    "@babel/plugin-proposal-optional-catch-binding": "^7.12.1",
+    "@babel/preset-env": "^7.24.4",
+    "@types/acorn": "^4.0.6",
+    "@types/fs-extra": "^11.0.4",
+    "@types/glob": "8.1.0",
+    "@types/jest": "^29.5.12",
+    "@types/jquery": "^3.5.29",
+    "@types/node": "^20.12.7",
+    "@types/stylus": "^0.48.42",
+    "autoprefixer-stylus": "latest",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "chokidar": "^3.6.0",
+    "coveralls": "^3.1.1",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.12",
+    "jest": "^29.7.0",
+    "npm-run-all": ">=4.1.5",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.16.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-serve": "1.1.1",
+    "rollup-plugin-typescript": "^1.0.1",
+    "stylus": "latest",
+    "terser": "^5.30.3",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.5"
+  },
+  "main": "dist/datepr.js",
+  "module": "dist/esm/index.js",
+  "style": "dist/datepr.css",
+  "types": "./dist/typings.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sokeio/datepr.git"
+  },
+  "author": "nguyen van hau <nguyenvanhaudev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sokeio/datepr/issues"
+  },
+  "homepage": "https://datepr.js.org",
+  "keywords": [
+    "javascript",
+    "datetimepicker",
+    "calendar",
+    "date",
+    "time",
+    "picker",
+    "lightweight"
+  ],
+  "browserslist": [
+    "ie >= 9",
+    "last 2 versions",
+    "safari >= 7"
+  ]
+}

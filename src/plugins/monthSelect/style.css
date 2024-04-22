@@ -1,0 +1,117 @@
+.datepr-monthSelect-months {
+  margin: 10px 1px 3px 1px;
+  flex-wrap: wrap;
+}
+
+.datepr-monthSelect-month {
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #393939;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  margin: 0.5px;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  text-align: center;
+  width: 33%;
+}
+
+.datepr-monthSelect-month.datepr-disabled {
+	color: #eee;
+}
+
+.datepr-monthSelect-month.datepr-disabled:hover,
+.datepr-monthSelect-month.datepr-disabled:focus {
+	cursor: not-allowed;
+	background: none !important;
+}
+
+.datepr-monthSelect-theme-dark {
+  background: #3f4458;
+}
+
+.datepr-monthSelect-theme-dark .datepr-current-month input.cur-year {
+  color: #fff;
+}
+
+.datepr-monthSelect-theme-dark .datepr-months .datepr-prev-month,
+.datepr-monthSelect-theme-dark .datepr-months .datepr-next-month {
+  color: #fff;
+  fill: #fff;
+}
+
+.datepr-monthSelect-theme-dark .datepr-monthSelect-month {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.datepr-monthSelect-month.today {
+  border-color: #959ea9;
+}
+
+.datepr-monthSelect-month.inRange,
+.datepr-monthSelect-month.inRange.today,
+.datepr-monthSelect-month:hover,
+.datepr-monthSelect-month:focus {
+  background: #e6e6e6;
+  cursor: pointer;
+  outline: 0;
+  border-color: #e6e6e6;
+}
+
+.datepr-monthSelect-theme-dark .datepr-monthSelect-month.inRange,
+.datepr-monthSelect-theme-dark .datepr-monthSelect-month:hover,
+.datepr-monthSelect-theme-dark .datepr-monthSelect-month:focus {
+  background: #646c8c;
+  border-color: #646c8c;
+}
+
+.datepr-monthSelect-month.today:hover,
+.datepr-monthSelect-month.today:focus {
+  background: #959ea9;
+  border-color: #959ea9;
+  color: #fff;
+}
+
+.datepr-monthSelect-month.selected,
+.datepr-monthSelect-month.startRange,
+.datepr-monthSelect-month.endRange {
+  background-color: #569ff7;
+  box-shadow: none;
+  color: #fff;
+  border-color: #569ff7;
+}
+
+.datepr-monthSelect-month.startRange {
+  border-radius: 50px 0 0 50px;
+}
+
+.datepr-monthSelect-month.endRange {
+  border-radius: 0 50px 50px 0;
+}
+
+.datepr-monthSelect-month.startRange.endRange {
+  border-radius: 50px;
+}
+
+.datepr-monthSelect-month.inRange {
+  border-radius: 0;
+  box-shadow: -5px 0 0 #e6e6e6, 5px 0 0 #e6e6e6;
+}
+
+.datepr-monthSelect-theme-dark .datepr-monthSelect-month.selected,
+.datepr-monthSelect-theme-dark .datepr-monthSelect-month.startRange,
+.datepr-monthSelect-theme-dark .datepr-monthSelect-month.endRange {
+  background: #80cbc4;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #fff;
+  border-color: #80cbc4;
+}
